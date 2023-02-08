@@ -10,6 +10,8 @@
 This is the repo for laboratory work no.1 on Real-Time Programming university course
 
 ## Running
+*Note: the `$` in the paragraphs below denote a bash command in the terminal. If you are copying this code into your terminal, don’t copy the `$` or it won’t work.*
+
 To run a program, execute the following command in the program's file location:
 ```
 $ elixir file_name.ex
