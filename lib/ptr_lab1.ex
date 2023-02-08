@@ -3,6 +3,7 @@ defmodule PtrLab1 do
   Documentation for `PtrLab1`.
   """
 
+  @spec hello :: :world
   @doc """
   Hello world.
 
@@ -17,4 +18,4 @@ defmodule PtrLab1 do
   end
 end
 
-IO.puts PtrLab1.hello()
+IO.puts(PtrLab1.hello())
