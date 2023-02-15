@@ -2,6 +2,7 @@
 
 ## Table of Contents
 - [About](#about)
+- [Tasks](#tasks)
 - [Running](#running)
 - [Running Actors](#running-actors)
 - [Testing](#testing)
@@ -11,6 +12,18 @@
 This is the repo for Project 0 on `Real-Time Programming` university course. <br>
 
 It has the aim to explore `Functional Programming` and the `Actor Model` in `Elixir` language.
+
+
+## Tasks
+All tasks can be found in the documentation of each module.
+
+Example:
+
+```
+@moduledoc """
+  Create an actor that returns any message it receives, while modifying it.
+  """
+```
 
 ## Running
 *Note: the `$` in the paragraphs below denote a bash command in the terminal. If you are copying this code into your terminal, don’t copy the `$` or it won’t work.*
