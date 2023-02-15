@@ -7,7 +7,9 @@
 - [Installation](#installation)
 
 ## About
-This is the repo for project 0 on Real-Time Programming university course. It has the aim to explore Functional Programming and the Actor Model in Elixir language.
+This is the repo for project 0 on Real-Time Programming university course. <br>
+
+It has the aim to explore *Functional Programming* and the *Actor Model* in *Elixir* language.
 
 ## Running
 *Note: the `$` in the paragraphs below denote a bash command in the terminal. If you are copying this code into your terminal, don’t copy the `$` or it won’t work.*
