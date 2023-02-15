@@ -1,4 +1,4 @@
-# Real-Time Programming Lab No.1
+# Real-Time Programming Project 0
 
 ## Table of Contents
 - [About](#about)
@@ -7,7 +7,7 @@
 - [Installation](#installation)
 
 ## About
-This is the repo for laboratory work no.1 on Real-Time Programming university course
+This is the repo for project 0 on Real-Time Programming university course. It has the aim to explore Functional Programming and the Actor Model in Elixir language.
 
 ## Running
 *Note: the `$` in the paragraphs below denote a bash command in the terminal. If you are copying this code into your terminal, don’t copy the `$` or it won’t work.*
@@ -18,7 +18,7 @@ $ elixir file_name.ex
 ```
 Example:
 ```
-$ cd /Users/stephaniamatvei/ptr_lab_1/lib/hello_ptr.ex
+$ cd /Users/stephaniamatvei/ptr_lab_1/lib/week1
 $ elixir hello_ptr.ex
 ```
 
