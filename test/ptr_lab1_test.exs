@@ -5,5 +5,4 @@ defmodule PtrLab1Test do
   test "greets the world" do
     assert PtrLab1.hello() == :world
   end
-  
 end

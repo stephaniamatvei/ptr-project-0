@@ -17,14 +17,18 @@ defmodule BlockingQueueTest do
 
   test "BlockingQueue.pop/1 should block when the queue is empty", %{bq: pid} do
     # Spawn a process that pushes an item to the queue 6 seconds later
-    spawn_link(fn->
-      Process.sleep(6_000)  # sleep 6 seconds
+    spawn_link(fn ->
+      # sleep 6 seconds
+      Process.sleep(6_000)
       BlockingQueue.push(pid, "Hi")
     end)
-    {time, _} = :timer.tc(fn->
-      assert "Hi" == BlockingQueue.pop(pid)
-    end)
-    assert time > 5_000_000  # `pop` should block more than 5 seconds (which is the default timeout for GenServer.call)
+
+    {time, _} =
+      :timer.tc(fn ->
+        assert "Hi" == BlockingQueue.pop(pid)
+      end)
+
+    # `pop` should block more than 5 seconds (which is the default timeout for GenServer.call)
+    assert time > 5_000_000
   end
-  
 end

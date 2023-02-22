@@ -15,5 +15,4 @@ defmodule AnagramsGroupingTest do
                "aeeglnt" => ["elegant", "tnagele"]
              }
   end
-  
 end
