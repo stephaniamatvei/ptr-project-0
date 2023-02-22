@@ -1,14 +1,17 @@
-defmodule Semaphore do
+defmodule Week3.Semaphore do
   @moduledoc """
   Create a module that would implement a semaphore.
 
   ## How to run:
 
-    iex(1)> pid = spawn(Semaphore, :semaphore, [3])
+    iex(1)> pid = spawn(Week3.Semaphore, :semaphore, [3])
     #PID<0.167.0>
 
-    iex(2)> Semaphore.request(pid)
+    iex(2)> Week3.Semaphore.request(pid)
     :ok
+
+    iex(3)> Week3.Semaphore.release(pid)
+    :release
 
   """
 
@@ -38,4 +41,9 @@ defmodule Semaphore do
         :ok
     end
   end
+
+  def release(semaphore) do
+    send(semaphore, :release)
+  end
+
 end
