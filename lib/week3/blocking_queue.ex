@@ -1,17 +1,17 @@
-defmodule BlockingQueue do
+defmodule Week3.BlockingQueue do
   @moduledoc """
   Create an actor which maintains a simple FIFO queue. You should write helper
   functions to create an API for the user, which hides how the queue is implemented.
 
   ## How to run:
-  
-    iex(1)> {:ok, pid} = BlockingQueue.start_link()
+
+    iex(1)> {:ok, pid} = Week3.BlockingQueue.start_link()
     {:ok, #PID<0.161.0>}
 
-    iex(2)> BlockingQueue.push(pid, 1)
+    iex(2)> Week3.BlockingQueue.push(pid, 1)
     :ok
 
-    iex(3)> BlockingQueue.pop(pid)
+    iex(3)> Week3.BlockingQueue.pop(pid)
     1
 
   """
@@ -34,9 +34,12 @@ defmodule BlockingQueue do
   @impl true
   def init(_items) do
     {
-      :ok, {
-        :queue.new(), # items queue
-        :queue.new()  # processes waiting for item
+      :ok,
+      {
+        # items queue
+        :queue.new(),
+        # processes waiting for item
+        :queue.new()
       }
     }
   end
@@ -53,12 +56,12 @@ defmodule BlockingQueue do
 
   # When there’s no items in the items queue, we do nothing and just keep the callers waiting.
   @impl true
-  def handle_continue(:pop, {@empty_queue, _refs}=state) do
+  def handle_continue(:pop, {@empty_queue, _refs} = state) do
     {:noreply, state}
   end
 
   # When there’s no processes waiting for items, we do nothing.
-  def handle_continue(:pop, {_items, @empty_queue}=state) do
+  def handle_continue(:pop, {_items, @empty_queue} = state) do
     {:noreply, state}
   end
 
@@ -70,10 +73,4 @@ defmodule BlockingQueue do
     GenServer.reply(ref, item)
     {:noreply, {items, refs}, {:continue, :pop}}
   end
-
 end
-
-
-# {:ok, pid} = BlockingQueue.start_link()
-# BlockingQueue.push(pid, 1)
-# BlockingQueue.pop(pid)

@@ -1,10 +1,10 @@
-defmodule MessageModifier do
+defmodule Week3.MessageModifier do
   @moduledoc """
   Create an actor that returns any message it receives, while modifying it.
 
   ## How to run:
 
-    iex(1)> pid = spawn(MessageModifier, :handle_input, [])
+    iex(1)> pid = spawn(Week3.MessageModifier, :handle_input, [])
     #PID<0.167.0>
 
     iex(2)> send(pid, 10)

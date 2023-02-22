@@ -1,17 +1,17 @@
-defmodule Averager do
+defmodule Week3.Averager do
   @moduledoc """
   Create an actor which receives numbers and with each request prints out the current average.
 
   ## How to run:
 
-    iex(1)> pid = Averager.start(0)
+    iex(1)> pid = Week3.Averager.start(0)
     #PID<0.167.0>
 
-    iex(2)> Averager.next
+    iex(2)> Week3.Averager.next
     Current average is 0
     0
 
-    iex(3)> Averager.next
+    iex(3)> Week3.Averager.next
     Current average is 5.0
     5.0
 
@@ -40,5 +40,4 @@ defmodule Averager do
         calculate_average((count + 10) / 2)
     end
   end
-
 end

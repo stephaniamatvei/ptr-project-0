@@ -45,5 +45,4 @@ defmodule Week3.Semaphore do
   def release(semaphore) do
     send(semaphore, :release)
   end
-
 end
