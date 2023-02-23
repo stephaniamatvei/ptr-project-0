@@ -46,16 +46,16 @@ Example:
 ```
 iex(1)> children = [
 ...(1)>   %{
-...(1)>     id: WorkerNode,
-...(1)>     start: {WorkerNode, :start_link, [[:hello]]}
+...(1)>     id: Week3.WorkerNode,
+...(1)>     start: {Week3.WorkerNode, :start_link, [[:hello]]}
 ...(1)>   }
 ...(1)> ]
-[%{id: WorkerNode, start: {WorkerNode, :start_link, [[:hello]]}}]
+[%{id: Week3.WorkerNode, start: {Week3.WorkerNode, :start_link, [[:hello]]}}]
 
 iex(2)> Supervisor.start_link(children, strategy: :one_for_one)
 {:ok, #PID<0.167.0>}
 
-iex(3)> GenServer.call(WorkerNode, :pop)
+iex(3)> GenServer.call(Week3.WorkerNode, :pop)
 "Task succesful: Miau"
 :hello
 ```
