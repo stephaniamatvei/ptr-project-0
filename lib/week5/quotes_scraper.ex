@@ -9,7 +9,7 @@ defmodule Week5.QuotesScraper do
       Print out the HTTP response status code, response headers and response body.
 
   ## How to run:
-      Week5.QuotesScraper.get_http_response
+      iex(1)> Week5.QuotesScraper.get_http_response
   """
   def get_http_response do
     IO.puts("STATUS CODE: #{get_url().status_code}\n
@@ -28,7 +28,7 @@ defmodule Week5.QuotesScraper do
       Save the data into a list of maps, each map representing a single quote.
 
   ## How to run:
-      Week5.QuotesScraper.parse_http_response_body
+      iex(1)> Week5.QuotesScraper.parse_http_response_body
   """
   def parse_http_response_body do
     get_url().body
@@ -57,7 +57,7 @@ defmodule Week5.QuotesScraper do
       Encode the data into JSON format. Name the file quotes.json.
 
   ## How to run:
-      Week5.QuotesScraper.encode_into_json
+      iex(1)> Week5.QuotesScraper.encode_into_json
   """
   def encode_into_json do
     json =
