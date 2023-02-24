@@ -17,6 +17,10 @@ defmodule Week5.QuotesScraper do
       BODY: #{get_url().body}")
   end
 
+  defp get_url do
+    HTTPoison.get!("https://quotes.toscrape.com")
+  end
+
   @doc """
   ## Task 2:
       Continue your previous application. Extract all quotes from the HTTP response body.
@@ -41,6 +45,12 @@ defmodule Week5.QuotesScraper do
     end)
   end
 
+  defp remove_quotation_marks(text) do
+    text
+    |> String.replace("“", "")
+    |> String.replace("”", "")
+  end
+
   @doc """
   ## Task 3:
       Continue your previous application. Persist the list of quotes into a file.
@@ -55,17 +65,5 @@ defmodule Week5.QuotesScraper do
       |> Jason.Formatter.pretty_print_to_iodata()
 
     File.write!("/Users/stephaniamatvei/ptr_lab_1/lib/week5/quotes.json", json)
-  end
-
-  # for tasks 1 and 2
-  defp get_url do
-    HTTPoison.get!("https://quotes.toscrape.com")
-  end
-
-  # for task 2
-  defp remove_quotation_marks(text) do
-    text
-    |> String.replace("“", "")
-    |> String.replace("”", "")
   end
 end
