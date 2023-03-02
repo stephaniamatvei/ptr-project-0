@@ -3,10 +3,10 @@
 ## Table of Contents
 - [About](#about)
 - [Tasks](#tasks)
-- [Running](#running)
-- [Running Actors](#running-actors)
-- [Testing](#testing)
-- [Installation](#installation)
+- [How to run? 🏃‍♀️](#how-to-run-🏃‍♀️)
+- [How to run Actors? 🏃‍♀️](#how-to-run-actors-🏃‍♀️)
+- [How to test? 🧪](#how-to-test-🧪)
+<!-- - [Installation](#installation) -->
 
 ## About
 This is the repo for Project 0 on `Real-Time Programming` university course. <br>
@@ -25,7 +25,7 @@ Example:
   """
 ```
 
-## Running
+## How to run? 🏃‍♀️
 *Note: the `$` in the paragraphs below denote a bash command in the terminal. If you are copying this code into your terminal, don’t copy the `$` or it won’t work.*
 
 To run a program, execute the following command in the program's file location:
@@ -38,7 +38,7 @@ $ cd /Users/stephaniamatvei/ptr_lab_1/lib/week1
 $ elixir hello_ptr.ex
 ```
 
-## Running Actors
+## How to run Actors? 🏃‍♀️
 Each module containing the Actor Model has the info about how to run its actors in the module doc.
 
 Example:
@@ -60,13 +60,13 @@ iex(3)> GenServer.call(Week3.WorkerNode, :pop)
 :hello
 ```
 
-## Testing
+## How to test? 🧪
 For testing, execute the following command in the project root:
 ```
 $ mix test
 ```
 
-## Installation
+<!-- ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 by adding `ptr_lab_1` to your list of dependencies in `mix.exs`:
@@ -81,4 +81,4 @@ end
 
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/ptr_lab_1>.
+be found at <https://hexdocs.pm/ptr_lab_1>. -->
