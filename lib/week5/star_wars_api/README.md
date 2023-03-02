@@ -7,5 +7,16 @@ Write an application that would implement a Star Wars-themed RESTful API. The AP
 • PUT /movies/:id <br />
 • PATCH /movies/:id <br />
 • DELETE /movies/:id <br />
-<br />
+
 Use a database to persist your data.
+
+## Database
+Erlang Term Storage (ETS)
+
+## How to run? 🏃‍♀️
+```
+mix run --no-halt
+```
+
+## How to test? 🧪
+Use Postman 🚀
