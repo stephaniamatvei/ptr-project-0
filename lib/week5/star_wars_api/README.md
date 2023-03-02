@@ -21,7 +21,7 @@ Erlang Term Storage (ETS)
 
 ## How to run? 🏃‍♀️
 ```
-mix run --no-halt
+$ mix run --no-halt
 ```
 
 ## How to test? 🧪
