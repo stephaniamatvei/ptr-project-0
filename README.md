@@ -3,9 +3,9 @@
 ## Table of Contents
 - [About](#about)
 - [Tasks](#tasks)
-- [How to run? 🏃‍♀️](#how-to-run-🏃‍♀️)
-- [How to run Actors? 🏃‍♀️](#how-to-run-actors-🏃‍♀️)
-- [How to test? 🧪](#how-to-test-🧪)
+- [How to run?](#how-to-run)
+- [How to run Actors?](#how-to-run-actors)
+- [Testing](#testing)
 <!-- - [Installation](#installation) -->
 
 ## About
@@ -25,7 +25,7 @@ Example:
   """
 ```
 
-## How to run? 🏃‍♀️
+## How to run?
 *Note: the `$` in the paragraphs below denote a bash command in the terminal. If you are copying this code into your terminal, don’t copy the `$` or it won’t work.*
 
 To run a program, execute the following command in the program's file location:
@@ -38,7 +38,7 @@ $ cd /Users/stephaniamatvei/ptr_lab_1/lib/week1
 $ elixir hello_ptr.ex
 ```
 
-## How to run Actors? 🏃‍♀️
+## How to run Actors?
 Each module containing the Actor Model has the info about how to run its actors in the module doc.
 
 Example:
@@ -60,8 +60,8 @@ iex(3)> GenServer.call(Week3.WorkerNode, :pop)
 :hello
 ```
 
-## How to test? 🧪
-For testing, execute the following command in the project root:
+## Testing
+For testing 🧪, execute the following command in the project root:
 ```
 $ mix test
 ```
