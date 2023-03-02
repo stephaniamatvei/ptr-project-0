@@ -14,7 +14,8 @@ defmodule PtrLab1.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger],
+      mod: {Week5.StarWarsApi.Application, []}
     ]
   end
 
@@ -25,7 +26,8 @@ defmodule PtrLab1.MixProject do
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
       {:httpoison, "~> 2.0"},
       {:floki, "~> 0.34.0"},
-      {:jason, "~> 1.3"}
+      {:jason, "~> 1.3"},
+      {:plug_cowboy, "~> 2.0"}
     ]
   end
 end
