@@ -1,3 +1,9 @@
+## Table of Contents
+
+- [Task](#task)
+- [Database](#database)
+- [How to run? 🏃‍♀️](#how-to-run-️🏃‍♀️)
+- [How to test? 🧪](#how-to-test-🧪)
 ## Task
 Write an application that would implement a Star Wars-themed RESTful API. The API should implement the following HTTP methods: <br /> 
 
