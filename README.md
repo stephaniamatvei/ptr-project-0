@@ -6,6 +6,7 @@
 - [How to run?](#how-to-run)
 - [How to run Actors?](#how-to-run-actors)
 - [Testing](#testing)
+- [Report](#report)
 <!-- - [Installation](#installation) -->
 
 ## About
@@ -65,6 +66,9 @@ For testing 🧪, execute the following command in the project root:
 ```
 $ mix test
 ```
+
+## Report
+The report of the project can be found ➡️ [HERE](https://github.com/stephaniamatvei/ptr-project-0/tree/main/lib#fafptr161----project-0) ⬅️
 
 <!-- ## Installation
 
