@@ -3,7 +3,7 @@
 > **Verified by:** asist. univ. Alexandru Osadcenco
 
 ## Table of Contents
-- [About](about)
+- [About](#about)
 - [P0W1](#p0w1)
 - [P0W2](#p0w2)
 - [P0W3](#p0w3)
