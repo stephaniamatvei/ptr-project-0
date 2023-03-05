@@ -630,6 +630,26 @@ end
 
 **Main Task** - Create an actor which maintains a simple FIFO queue. You should write helper functions to create an API for the user, which hides how the queue is implemented.
 
+*Explanation:*
+
+1. The BlockingQueue needs to store 2 queues, one for items, one for callers.
+
+2. Implementing `push`:
+
+    2.1. When an item is pushed to the blocking queue we just add the caller to the waiting queue and postpone the notification.
+
+3. Implementing `pop`:
+
+    3.1 Same as `push`, we just add the caller to the waiting queue and postpone the notification. The difference is that we should not reply to the callers but keep them waiting, so we should return `{:noreply, …}`. Another thing to note is that we should keep the caller waiting indefinitely, so we should set the timeout to `:infinity`.
+
+4. Implementing the blocking behavior:
+
+    4.1. When there’s no items in the items queue, we do nothing and just keep the callers waiting.
+
+    4.2. When there’s no processes waiting for items, we do nothing.
+
+    4.3. When both an item and a process waiting for an item are available, we send the item to the process, and recursively check whether there are more jobs to do by returning {:noreply, new_state, {:continue, term}}.
+
 ```elixir
 defmodule Week3.BlockingQueue do
   @moduledoc """
@@ -708,29 +728,16 @@ defmodule Week3.BlockingQueue do
   end
 end
 ```
-*Explanation:*
-
-1. The BlockingQueue needs to store 2 queues, one for items, one for callers.
-
-2. Implementing `push`:
-
-    2.1. When an item is pushed to the blocking queue we just add the caller to the waiting queue and postpone the notification.
-
-3. Implementing `pop`:
-
-    3.1 Same as `push`, we just add the caller to the waiting queue and postpone the notification. The difference is that we should not reply to the callers but keep them waiting, so we should return `{:noreply, …}`. Another thing to note is that we should keep the caller waiting indefinitely, so we should set the timeout to `:infinity`.
-
-4. Implementing the blocking behavior:
-
-    4.1. When there’s no items in the items queue, we do nothing and just keep the callers waiting.
-
-    4.2. When there’s no processes waiting for items, we do nothing.
-
-    4.3. When both an item and a process waiting for an item are available, we send the item to the process, and recursively check whether there are more jobs to do by returning {:noreply, new_state, {:continue, term}}.
-
-
 
 **Main Task** - Create a module that would implement a semaphore.
+
+*Explanation:*
+
+If we create a semaphore with the initial value 4 then at most four processes will be granted access to the critical section.
+
+The requesting process will be suspended waiting in a receive statement until the semaphore responds with a `:granted` message.
+
+A process that sends a `:request` message will have its message inserted as the last message in the message queue. If there are no resources left (the first clause), then request messages will simply not be handled. Only when resources are available will the semaphore handle requests and then it will of course handle them in the order they have arrived in the message queue.
 
 ```elixir
 defmodule Week3.Semaphore do
@@ -782,14 +789,6 @@ defmodule Week3.Semaphore do
   end
 end
 ```
-
-*Explanation:*
-
-If we create a semaphore with the initial value 4 then at most four processes will be granted access to the critical section.
-
-The requesting process will be suspended waiting in a receive statement until the semaphore responds with a `:granted` message.
-
-A process that sends a `:request` message will have its message inserted as the last message in the message queue. If there are no resources left (the first clause), then request messages will simply not be handled. Only when resources are available will the semaphore handle requests and then it will of course handle them in the order they have arrived in the message queue.
 
 **Bonus Task** - Create a module that would perform some risky business. Start by creating a scheduler actor. When receiving a task to do, it will create a worker node that will perform the task. Given the nature of the task, the worker node is prone to crashes (task completion rate 50%). If the scheduler detects a crash, it will log it and restart the worker node. If the worker node finishes successfully, it should print the result.
 
@@ -1018,9 +1017,15 @@ end
 **Minimal Task** - Write an application that would visit this link. Print out the HTTP response
 status code, response headers and response body.
 
+*For this task I used [HTTPoison](https://hexdocs.pm/httpoison/readme.html)*
+
 **Minimal Task** -  Continue your previous application. Extract all quotes from the HTTP response body. Collect the author of the quote, the quote text and tags. Save the data into a list of maps, each map representing a single quote.
 
+*Here I used [Floki](https://hexdocs.pm/floki/readme.html) for HTML parsing*
+
 **Minimal Task** - Continue your previous application. Persist the list of quotes into a file. Encode the data into JSON format. Name the file quotes.json.
+
+*Here I used [Jason](https://hexdocs.pm/jason/readme.html) for JSON parsing*
 
 ```elixir
 defmodule Week5.QuotesScraper do
