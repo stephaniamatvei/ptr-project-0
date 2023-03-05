@@ -1,13 +1,19 @@
 # FAF.PTR16.1 -- Project 0
-> **Performed by:** Matvei Stephania, group FAF-203
+> **Performed by:** Matvei Stephania, group FAF-203 <br>
 > **Verified by:** asist. univ. Alexandru Osadcenco
 
 ## Table of Contents
+- [About](about)
 - [P0W1](#p0w1)
 - [P0W2](#p0w2)
 - [P0W3](#p0w3)
 - [P0W4](#p0w4)
 - [P0W5](#p0w5)
+- [Conclusion](#conclusion)
+- [Bibliography](#bibliography)
+
+## About
+This is the report for Project 0 on Real-Time Programming University Course.
 
 ## P0W1
 
