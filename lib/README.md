@@ -17,7 +17,7 @@ This is the report for Project 0 on Real-Time Programming University Course.
 
 ## P0W1
 
-**Minimal Task** -- Write a script that would print the message “Hello PTR” on the screen. Execute it.
+**Minimal Task** - Write a script that would print the message “Hello PTR” on the screen. Execute it.
 
 ```elixir
 defmodule Week1.HelloPtr do
@@ -31,7 +31,7 @@ Week1.HelloPtr.print_hello_ptr()
 
 ## P0W2
 
-**Minimal Task** -- Write a function that determines whether an input integer is prime.
+**Minimal Task** - Write a function that determines whether an input integer is prime.
 
 
 ```elixir
@@ -52,7 +52,7 @@ end
 IO.inspect(PrimeNumbersChecker.is_prime(13))
 ```
 
-**Minimal Task** -- Write a function to calculate the area of a cylinder, given it’s height and radius.
+**Minimal Task** - Write a function to calculate the area of a cylinder, given it’s height and radius.
 
 ```elixir
 defmodule CylinderArea do
@@ -68,7 +68,7 @@ end
 
 CylinderArea.calculate_cylinder_area(3, 4)
 ```
-**Minimal Task** -- Write a function to reverse a list.
+**Minimal Task** - Write a function to reverse a list.
 
 ```elixir
 defmodule ReverseList do
@@ -708,6 +708,27 @@ defmodule Week3.BlockingQueue do
   end
 end
 ```
+*Explanation:*
+
+1. The BlockingQueue needs to store 2 queues, one for items, one for callers.
+
+2. Implementing `push`:
+
+    2.1. When an item is pushed to the blocking queue we just add the caller to the waiting queue and postpone the notification.
+
+3. Implementing `pop`:
+
+    3.1 Same as `push`, we just add the caller to the waiting queue and postpone the notification. The difference is that we should not reply to the callers but keep them waiting, so we should return `{:noreply, …}`. Another thing to note is that we should keep the caller waiting indefinitely, so we should set the timeout to `:infinity`.
+
+4. Implementing the blocking behavior:
+
+    4.1. When there’s no items in the items queue, we do nothing and just keep the callers waiting.
+
+    4.2. When there’s no processes waiting for items, we do nothing.
+
+    4.3. When both an item and a process waiting for an item are available, we send the item to the process, and recursively check whether there are more jobs to do by returning {:noreply, new_state, {:continue, term}}.
+
+
 
 **Main Task** - Create a module that would implement a semaphore.
 
@@ -761,6 +782,14 @@ defmodule Week3.Semaphore do
   end
 end
 ```
+
+*Explanation:*
+
+If we create a semaphore with the initial value 4 then at most four processes will be granted access to the critical section.
+
+The requesting process will be suspended waiting in a receive statement until the semaphore responds with a `:granted` message.
+
+A process that sends a `:request` message will have its message inserted as the last message in the message queue. If there are no resources left (the first clause), then request messages will simply not be handled. Only when resources are available will the semaphore handle requests and then it will of course handle them in the order they have arrived in the message queue.
 
 **Bonus Task** - Create a module that would perform some risky business. Start by creating a scheduler actor. When receiving a task to do, it will create a worker node that will perform the task. Given the nature of the task, the worker node is prone to crashes (task completion rate 50%). If the scheduler detects a crash, it will log it and restart the worker node. If the worker node finishes successfully, it should print the result.
 
@@ -828,6 +857,8 @@ end
 
 **Minimal Task** - Create a supervised pool of identical worker actors. The number of actors is static, given at initialization. Workers should be individually addressable. Worker actors should echo any message they receive. If an actor dies (by receiving a “kill” message), it should be restarted by the supervisor. Logging is welcome.
 
+*Supervisor component:*
+
 ```elixir
 defmodule Week4.WorkerSupervisor do
   @moduledoc """
@@ -871,6 +902,8 @@ end
 # send(pid2, :kill)
 # Week4.WorkerSupervisor.get_worker_pid(pid, 1)
 ```
+
+*Worker component:*
 
 ```elixir
 defmodule Week4.Worker do
@@ -1385,5 +1418,7 @@ In conclusion, I can say that while working on this project I've learned a lot o
 2. [Elixir docs](https://hexdocs.pm/elixir/Kernel.html)
 3. [Elixir School](https://elixirschool.com/en)
 4. [Seven Concurrency Models in Seven Weeks](http://www.r-5.org/files/books/computers/languages/sql/nosql/Paul_Butcher-Seven_Concurrency_Models_in_Seven_Weeks-EN.pdf)
+5. [Mutual Exclusion
+Locks, Semaphores and Monitors](https://people.kth.se/~johanmon/courses/id1019/seminars/mutex/mutex.pdf)
 
 [🆙 BACK TO TOP 🆙](#fafptr161----project-0)
