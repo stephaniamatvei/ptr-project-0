@@ -1368,14 +1368,15 @@ end
 
 ## Conclusion
 
-&nbsp;&nbsp;&nbsp;&nbsp; In the first laboratory work (aka Project 0) on the Real-Time Programming University Course, I've learned:
+In the first laboratory work (aka Project 0) on the Real-Time Programming University Course, I've learned:
+
 1. A new programming language - *Elixir*;
 2. A new language paradigm - *Functional*;
 3. A new concurrency model - *the Actor Model*;
 4. How to store data in memory using *ETS - Erlang Term Storage*;
 5. How to build an HTTP server using the *PlugCowboy* Elixir library. 
 
-&nbsp;&nbsp;&nbsp;&nbsp; In conclusion, I can say that while working on this project I've learned a lot of new and interesting concepts.
+In conclusion, I can say that while working on this project I've learned a lot of new and interesting concepts.
 
 
 ## Bibliography
@@ -1384,3 +1385,5 @@ end
 2. [Elixir docs](https://hexdocs.pm/elixir/Kernel.html)
 3. [Elixir School](https://elixirschool.com/en)
 4. [Seven Concurrency Models in Seven Weeks](http://www.r-5.org/files/books/computers/languages/sql/nosql/Paul_Butcher-Seven_Concurrency_Models_in_Seven_Weeks-EN.pdf)
+
+[🆙 BACK TO TOP 🆙](#faf.ptr16.1----project-0)
