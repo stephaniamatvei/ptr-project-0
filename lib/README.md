@@ -3,14 +3,14 @@
 > **Verified by:** asist. univ. Alexandru Osadcenco
 
 ## Table of Contents
-- [About](#about)
-- [P0W1](#p0w1)
-- [P0W2](#p0w2)
-- [P0W3](#p0w3)
-- [P0W4](#p0w4)
-- [P0W5](#p0w5)
-- [Conclusion](#conclusion)
-- [Bibliography](#bibliography)
+  - [About](#about)
+  - [P0W1](#p0w1)
+  - [P0W2](#p0w2)
+  - [P0W3](#p0w3)
+  - [P0W4](#p0w4)
+  - [P0W5](#p0w5)
+  - [Conclusion](#conclusion)
+  - [Bibliography](#bibliography)
 
 ## About
 This is the report for Project 0 on Real-Time Programming University Course.
@@ -1386,4 +1386,4 @@ In conclusion, I can say that while working on this project I've learned a lot o
 3. [Elixir School](https://elixirschool.com/en)
 4. [Seven Concurrency Models in Seven Weeks](http://www.r-5.org/files/books/computers/languages/sql/nosql/Paul_Butcher-Seven_Concurrency_Models_in_Seven_Weeks-EN.pdf)
 
-[🆙 BACK TO TOP 🆙](#faf.ptr16.1----project-0)
+[🆙 BACK TO TOP 🆙](#fafptr161----project-0)
